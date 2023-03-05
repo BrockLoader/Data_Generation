@@ -1,8 +1,6 @@
-def generate_names():
+def generate_names(val):
 
     import names
-
-    val = input('How many names do you want to generate?: ')
 
     val = int(val)
 
@@ -10,12 +8,17 @@ def generate_names():
 
     loop_count = 0
 
+    thousands = 1000
+
     while loop_count < val:
         full_name = names.get_first_name() + ' ' + names.get_last_name()
         if full_name in name_list:
-            break
+            continue
         name_list.append(full_name)
         loop_count = loop_count + 1
+        if loop_count == thousands:
+            print(thousands, ' User Names Generated.')
+            thousands = thousands + 1000
     
     return(name_list)
 
