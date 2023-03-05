@@ -9,7 +9,7 @@ from sortable_filename import sortable_filename
 import pandas as pd
 import secrets as sc
 
-generation_amount = 1000
+generation_amount = 200000
 
 csvdata = pd.DataFrame()
 salaries = pd.DataFrame()
@@ -32,7 +32,7 @@ csvdata['PhoneNumber'] = ""
 for i in range(0, generation_amount):
     csvdata.loc[i]['Email'] = generate_emails(fullname=str(csvdata.iloc[i]['FullName']), domain='loaderhome.me')
     csvdata.loc[i]['Address'] = generate_address()
-    csvdata.loc[i]['Salary'] = generate_salary(3000, 25000)
+    csvdata.loc[i]['Salary'] = generate_salary(2500, 100000)
     csvdata.loc[i]['AccountNumber'] = acc_nums.loc[i][0]
     csvdata.loc[i]['AccountName'] = str.replace(csvdata.loc[i]['FullName'], ' ', '_')
     csvdata.loc[i]['BSBNumber'] = generate_bsb()
@@ -42,4 +42,4 @@ for i in range(0, generation_amount):
         print(generation_tracker, ' Users Generated')
         generation_tracker = generation_tracker + 100
 
-csvdata.to_csv(sortable_filename('Test', 'csv'))
+csvdata.to_csv('Input.csv')
