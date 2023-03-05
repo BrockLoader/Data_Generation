@@ -1,6 +1,7 @@
-import names
-
 def generate_names():
+
+    import names
+
     val = input('How many names do you want to generate?: ')
 
     val = int(val)
