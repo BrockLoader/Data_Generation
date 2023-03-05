@@ -32,7 +32,7 @@ csvdata['PhoneNumber'] = ""
 for i in range(0, generation_amount):
     csvdata.loc[i]['Email'] = generate_emails(fullname=str(csvdata.iloc[i]['FullName']), domain='loaderhome.me')
     csvdata.loc[i]['Address'] = generate_address()
-    csvdata.loc[i]['Salary'] = generate_salary(3000, 10000)
+    csvdata.loc[i]['Salary'] = generate_salary(3000, 25000)
     csvdata.loc[i]['AccountNumber'] = acc_nums.loc[i][0]
     csvdata.loc[i]['AccountName'] = str.replace(csvdata.loc[i]['FullName'], ' ', '_')
     csvdata.loc[i]['BSBNumber'] = generate_bsb()
